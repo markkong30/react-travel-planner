@@ -1,6 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import { Paper, Typography, useMediaQuery, Rating, Container, Box, } from '@mui/material';
+import { useMediaQuery, Box, } from '@mui/material';
 import Pin from '../images/pin';
 const styles = require('../mapStyle.json')
 
@@ -33,8 +33,9 @@ const Map = ({ setCoords, setBounds, coords, places, weatherData, setChildClick 
         defaultCenter={{ lat: 51.5, lng: -0.12 }}
         center={coords}
         defaultZoom={14}
+        zoom={14}
         margin={[50, 50, 50, 50]}
-        options={{ disableDefaultUI: true, zoomControl: true, styles: styles }}
+        options={{ styles: styles }}
         isMarkerShown={false}
         onChange={updateCoords}
         onChildClick={(child) => setChildClick(child)}

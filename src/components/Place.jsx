@@ -72,9 +72,17 @@ const Place = ({ places, isLoading, childClick }) => {
         </Box>
         :
         <Grid container spacing={3} sx={{ overflowY: 'scroll', maxHeight: '76vh' }}>
+          {places.length == 0 &&
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '50vh' }} >
+              <Typography variant='h6' color='primary'>
+                Sorry, no places matches your criteria...
+              </Typography>
+            </Box>
+          }
+
           {places?.map((place, i) => (
-            <Grid item xs={12} key={i} >
-              <PlaceDetails place={place} selected={Number(childClick) == i || 1} refProp={eleRefs[i]} />
+            <Grid ref={eleRefs[i]} item xs={12} key={i} >
+              <PlaceDetails place={place} selected={Number(childClick) == i} refProp={eleRefs[i]} />
             </Grid>
           ))}
         </Grid>

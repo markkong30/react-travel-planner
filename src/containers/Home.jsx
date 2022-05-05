@@ -16,7 +16,6 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { selected: { type, rating, price } } = useContext(SelectContext);
 
-
   useEffect(() => {
     setIsLoading(true);
 
@@ -93,7 +92,7 @@ const Home = () => {
       <Navbar setCoords={setCoords} />
       <Grid container spacing={0} sx={{ width: '100%' }}>
         <Grid item xs={12} md={6}>
-          <Place places={filteredPlaces ? filteredPlaces : places}
+          <Place places={filteredPlaces}
             childClick={childClick} isLoading={isLoading} />
         </Grid>
 
@@ -102,7 +101,7 @@ const Home = () => {
             setCoords={setCoords}
             coords={coords}
             setBounds={setBounds}
-            places={filteredPlaces ? filteredPlaces : places}
+            places={filteredPlaces}
             weatherData={weatherData}
             setChildClick={setChildClick}
           />

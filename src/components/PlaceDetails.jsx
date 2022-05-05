@@ -6,7 +6,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
   if (!place.photo || !place.name) {
     return;
   }
-
+  // console.log(selected, refProp)
   if (selected && refProp !== undefined && refProp.current !== null) {
     refProp.current.scrollIntoView({
       behavior: 'smooth',
