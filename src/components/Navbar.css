@@ -1,0 +1,23 @@
+.pac-container {
+	z-index: 10000 !important;
+	/* margin-left: 0.5rem; */
+	/* width: 100% !important; */
+	/* position: absolute !important; */
+	/* left: 0 !important; */
+	/* right: 0 !important; */
+	margin-left: -6px;
+	width: 200px !important;
+	display: block !important;
+}
+
+.pac-matched {
+	color: #273154;
+}
+
+.pac-item-query {
+	color: #5a627d;
+}
+
+.pac-container:empty {
+	display: none !important;
+}
