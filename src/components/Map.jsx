@@ -20,7 +20,7 @@ const Map = ({ setCoords, setBounds, coords, places, weatherData, setChildClick 
       return;
     }
 
-    if (Math.abs(lat - newCoord.lat) > 0.5 || Math.abs(lng - newCoord.lng) > 0.5) {
+    if (Math.abs(lat - newCoord.lat) > 0.02 || Math.abs(lng - newCoord.lng) > 0.02) {
       setCoords({ lat: e.center.lat, lng: e.center.lng });
       setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
     }
